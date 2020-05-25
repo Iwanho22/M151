@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29926.136
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ch.vonivo.m151.demo.api", "ch.vonivo.m151.demo.api\ch.vonivo.m151.demo.api.csproj", "{DD88FFA7-6F09-428E-8015-85BA2949170E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DD88FFA7-6F09-428E-8015-85BA2949170E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DD88FFA7-6F09-428E-8015-85BA2949170E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DD88FFA7-6F09-428E-8015-85BA2949170E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DD88FFA7-6F09-428E-8015-85BA2949170E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5E7213C5-D19B-467B-8865-295D7CD3D3E2}
+	EndGlobalSection
+EndGlobal
