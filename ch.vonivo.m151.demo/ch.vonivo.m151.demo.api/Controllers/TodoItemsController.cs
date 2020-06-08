@@ -10,6 +10,7 @@ using ch.vonivo.m151.demo.api.DTOs;
 
 namespace ch.vonivo.m151.demo.api.Controllers
 {
+    [Produces("application/json")]
     [Route("api/[controller]")]
     [ApiController]
     public class TodoItemsController : ControllerBase
@@ -32,7 +33,7 @@ namespace ch.vonivo.m151.demo.api.Controllers
 
         // GET: api/TodoItems/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<TodoItemDTO>> GetTodoItem(long id)
+        public async Task<ActionResult<ResponseModel<TodoItemDTO>>> GetTodoItem(long id)
         {
             var todoItem = await _context.TodoItems.FindAsync(id);
 
@@ -41,7 +42,7 @@ namespace ch.vonivo.m151.demo.api.Controllers
                 return NotFound();
             }
 
-            return ItemToDTO(todoItem);
+            return new ResponseModel<TodoItemDTO>(ItemToDTO(todoItem));
         }
 
         // PUT: api/TodoItems/5
@@ -84,8 +85,27 @@ namespace ch.vonivo.m151.demo.api.Controllers
         }
 
         // POST: api/TodoItems
-        // To protect from overposting attacks, enable the specific properties you want to bind to, for
-        // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
+        /// <summary>
+        /// Creates a TodoItem.
+        /// </summary>
+        /// <remarks>
+        /// Sample request:
+        ///
+        ///     POST /Todo
+        ///     {
+        ///        "id": 1,
+        ///        "name": "Item1",
+        ///        "isComplete": true
+        ///     }
+        ///
+        /// </remarks>
+        /// <param name="item"></param>
+        /// <returns>A newly created TodoItem</returns>
+        /// <response code="201">Returns the newly created item</response>
+        /// <response code="400">If the item is null</response>            
+        [HttpPost]
+        [ProducesResponseType(StatusCodes.Status201Created)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [HttpPost]
         public async Task<ActionResult<TodoItemDTO>> PostTodoItem(TodoItemDTO todoItemDTO)
         {
@@ -105,6 +125,11 @@ namespace ch.vonivo.m151.demo.api.Controllers
         }
 
         // DELETE: api/TodoItems/5
+        /// <summary>
+        /// Deletes a specific TodoItem
+        /// </summary>
+        /// <param name="id">determines the TodoItem which will be deleted</param>
+        /// <returns>the deleted TodoItem</returns>
         [HttpDelete("{id}")]
         public async Task<ActionResult<TodoItem>> DeleteTodoItem(long id)
         {
