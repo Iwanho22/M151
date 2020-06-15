@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ch.vonivo.m151.demo.api.Models
 {
-    public class AuthenticateModel
+    public class AuthenticateRequest
     {
         [Required]
         public string Username { get; set; }
