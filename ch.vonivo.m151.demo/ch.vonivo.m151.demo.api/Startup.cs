@@ -11,10 +11,13 @@ using System.IO;
 using Microsoft.IdentityModel.Tokens;
 using ch.vonivo.m151.demo.api.Helpers;
 using System.Text;
-using Microsoft.AspNetCore.Authentication.JwtBearer;
 using ch.vonivo.m151.demo.data.Service;
-using ch.vonivo.m151.demo.data.Models;
 using ch.vonivo.m151.demo.data.Models.Context;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Options;
+using System.Linq;
+using Microsoft.AspNetCore.Mvc.Formatters;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 
 namespace ch.vonivo.m151.demo.api
 {
@@ -31,6 +34,12 @@ namespace ch.vonivo.m151.demo.api
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddCors();
+
+            // configure JsonPatch
+            services.AddControllersWithViews(options =>
+            {
+                options.InputFormatters.Insert(0, GetJsonPatchInputFormatter());
+            });
 
             // configure strongly typed settings objects
             var appSettingsSection = Configuration.GetSection("AppSettings");
@@ -64,6 +73,10 @@ namespace ch.vonivo.m151.demo.api
                 opt.UseInMemoryDatabase("TodoList"));
             services.AddDbContext<UserContext>(opt =>
                opt.UseInMemoryDatabase("UserList"));
+            services.AddDbContext<CustomerContext>(opt =>
+               opt.UseInMemoryDatabase("CustomerList"));
+            services.AddDbContext<OrderContext>(opt =>
+               opt.UseInMemoryDatabase("OrderList"));
             services.AddControllers();
 
             // Register the Swagger generator, defining 1 or more Swagger documents
@@ -132,6 +145,22 @@ namespace ch.vonivo.m151.demo.api
             {
                 endpoints.MapControllers();
             });
+        }
+
+        private static NewtonsoftJsonPatchInputFormatter GetJsonPatchInputFormatter()
+        {
+            var builder = new ServiceCollection()
+                .AddLogging()
+                .AddMvc()
+                .AddNewtonsoftJson()
+                .Services.BuildServiceProvider();
+
+            return builder
+                .GetRequiredService<IOptions<MvcOptions>>()
+                .Value
+                .InputFormatters
+                .OfType<NewtonsoftJsonPatchInputFormatter>()
+                .First();
         }
     }
 }
