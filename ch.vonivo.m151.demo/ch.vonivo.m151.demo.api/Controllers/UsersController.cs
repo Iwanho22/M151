@@ -1,13 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-using ch.vonivo.m151.demo.api.Models;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Authorization;
-using ch.vonivo.m151.demo.api.Service;
+using ch.vonivo.m151.demo.data.Service;
+using ch.vonivo.m151.demo.data.Models;
 
 namespace ch.vonivo.m151.demo.api.Controllers
 {

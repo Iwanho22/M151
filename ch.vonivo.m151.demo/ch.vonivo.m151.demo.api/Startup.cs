@@ -4,16 +4,17 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.EntityFrameworkCore;
-using ch.vonivo.m151.demo.api.Models;
 using Microsoft.OpenApi.Models;
 using System;
 using System.Reflection;
 using System.IO;
 using Microsoft.IdentityModel.Tokens;
-using ch.vonivo.m151.demo.api.Service;
 using ch.vonivo.m151.demo.api.Helpers;
 using System.Text;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using ch.vonivo.m151.demo.data.Service;
+using ch.vonivo.m151.demo.data.Models;
+using ch.vonivo.m151.demo.data.Models.Context;
 
 namespace ch.vonivo.m151.demo.api
 {

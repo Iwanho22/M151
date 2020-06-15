@@ -1,10 +1,9 @@
-﻿using ch.vonivo.m151.demo.api.DTOs;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace ch.vonivo.m151.demo.api.Models
+namespace ch.vonivo.m151.demo.data.Models
 {
     public class ResponseModel<Tdata>
     {

@@ -21,5 +21,9 @@
     <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="6.6.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\ch.vonivo.m151.demo.data\ch.vonivo.m151.demo.data.csproj" />
+  </ItemGroup>
+
 
 </Project>

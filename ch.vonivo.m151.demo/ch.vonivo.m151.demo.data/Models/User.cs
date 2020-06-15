@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 
-namespace ch.vonivo.m151.demo.api.Models
+namespace ch.vonivo.m151.demo.data.Models
 {
     public class User
     {

@@ -1,16 +1,15 @@
-﻿using ch.vonivo.m151.demo.api.Models;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
-using ch.vonivo.m151.demo.api.Helpers;
 using Microsoft.Extensions.Options;
 using System;
 using System.Security.Claims;
-using Microsoft.IdentityModel.Tokens;
 using System.Text;
 using System.IdentityModel.Tokens.Jwt;
+using Microsoft.IdentityModel.Tokens;
+using ch.vonivo.m151.demo.data.Models;
+using ch.vonivo.m151.demo.api.Helpers;
 
-namespace ch.vonivo.m151.demo.api.Service
+namespace ch.vonivo.m151.demo.data.Service
 {
     public interface IUserService
     {
