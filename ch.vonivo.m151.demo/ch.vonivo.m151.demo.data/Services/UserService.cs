@@ -8,6 +8,7 @@ using System.IdentityModel.Tokens.Jwt;
 using Microsoft.IdentityModel.Tokens;
 using ch.vonivo.m151.demo.data.Models;
 using ch.vonivo.m151.demo.api.Helpers;
+using ch.vonivo.m151.demo.data.HelperClasses;
 
 namespace ch.vonivo.m151.demo.data.Service
 {

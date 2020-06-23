@@ -7,6 +7,7 @@ using Microsoft.EntityFrameworkCore;
 using ch.vonivo.m151.demo.api.DTOs;
 using ch.vonivo.m151.demo.data.Models;
 using ch.vonivo.m151.demo.data.Models.Context;
+using ch.vonivo.m151.demo.data.HelperClasses;
 
 namespace ch.vonivo.m151.demo.api.Controllers
 {
@@ -15,9 +16,9 @@ namespace ch.vonivo.m151.demo.api.Controllers
     [ApiController]
     public class TodoItemsController : ControllerBase
     {
-        private readonly TodoContext _context;
+        private readonly DemoAppilcaitonContext _context;
 
-        public TodoItemsController(TodoContext context)
+        public TodoItemsController(DemoAppilcaitonContext context)
         {
             _context = context;
         }

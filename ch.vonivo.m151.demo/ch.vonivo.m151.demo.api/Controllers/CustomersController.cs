@@ -15,9 +15,9 @@ namespace ch.vonivo.m151.demo.api.Controllers
     [ApiController]
     public class CustomersController : ControllerBase
     {
-        private readonly CustomerContext _context;
+        private readonly DemoAppilcaitonContext _context;
 
-        public CustomersController(CustomerContext context)
+        public CustomersController(DemoAppilcaitonContext context)
         {
             _context = context;
         }

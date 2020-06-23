@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Authorization;
 using ch.vonivo.m151.demo.data.Service;
 using ch.vonivo.m151.demo.data.Models;
+using ch.vonivo.m151.demo.data.HelperClasses;
 
 namespace ch.vonivo.m151.demo.api.Controllers
 {

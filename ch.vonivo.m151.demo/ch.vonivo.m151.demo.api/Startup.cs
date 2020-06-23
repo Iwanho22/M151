@@ -69,14 +69,14 @@ namespace ch.vonivo.m151.demo.api
             // configure DI for application services
             services.AddScoped<IUserService, UserService>();
 
-            services.AddDbContext<TodoContext>(opt =>
-                opt.UseInMemoryDatabase("TodoList"));
-            services.AddDbContext<UserContext>(opt =>
+            services.AddDbContext<DemoAppilcaitonContext>(options =>
+                options.UseSqlServer(Configuration.GetConnectionString("M151TestContext")));
+            /*services.AddDbContext<UserContext>(opt =>
                opt.UseInMemoryDatabase("UserList"));
             services.AddDbContext<CustomerContext>(opt =>
                opt.UseInMemoryDatabase("CustomerList"));
             services.AddDbContext<OrderContext>(opt =>
-               opt.UseInMemoryDatabase("OrderList"));
+               opt.UseInMemoryDatabase("OrderList"));*/
             services.AddControllers();
 
             // Register the Swagger generator, defining 1 or more Swagger documents

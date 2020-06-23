@@ -1,9 +1,10 @@
-﻿using System;
+﻿using ch.vonivo.m151.demo.data.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace ch.vonivo.m151.demo.data.Models
+namespace ch.vonivo.m151.demo.data.HelperClasses
 {
     public class AuthenticateResponse
     {
